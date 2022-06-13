@@ -19,11 +19,11 @@ const Login = () => {
               <form onSubmit={handleSubmit(onSubmit)}>
               <label htmlFor="email">Email</label>
                 <input {...register("email", { required: true })} />
-                {errors.email?.type === 'required' && "Email is required"}
+                {errors.email?.type === 'required' && "⚠ Email is required"}
 
               <label htmlFor="email">Password</label>
                 <input {...register("password", { required: true })} />
-                {errors.password?.type === 'required' && "Password is required"}
+                {errors.password?.type === 'required' && "⚠ Password is required"}
                 
                 <input type="submit" value="LOGIN"/>
               </form>
