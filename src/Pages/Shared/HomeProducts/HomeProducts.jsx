@@ -8,12 +8,14 @@ const HomeProducts = () => {
   return (
     <>
         <div className='container mx-auto px-4'>
+        <div className="md:grid grid-cols-3 gap-3">
             {
                 products.map(pd => <ShowPd
                     key={pd.id}
                     pd={pd}
                 />)
             }
+            </div>
         </div>
     </>
   )

@@ -9,6 +9,7 @@ import Home from "./Pages/Home/Home";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Blog from "./Pages/Blog/Blog";
+import SinglePD from "./Pages/SinglePD/SinglePD";
 
 function App() {
   return (
@@ -18,6 +19,11 @@ function App() {
         <Route path="/" element={<Home/>}></Route>
         <Route path="/home" element={<Home/>}></Route>
         <Route path="/shop" element={<Shop/>}></Route>
+
+        {/* Load single Data */}
+        <Route path="/home/:id" element={<SinglePD/>}></Route>
+        <Route path="/:id" element={<SinglePD/>}></Route>
+        
         <Route path="/blog" element={<Blog/>}></Route>
         <Route path="/checkout" element={<Checkout/>}></Route>
         <Route path="/dashboard" element={<Dashboard/>}></Route>
