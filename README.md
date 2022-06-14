@@ -7,3 +7,4 @@ This project was tailwind with [LIVE WEBSITE]().
 ## Features
 ## Dependencies
 1. npm install react-hook-form
+2. DaisyUI
