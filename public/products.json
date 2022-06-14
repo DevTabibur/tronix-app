@@ -1,0 +1,44 @@
+[
+    {
+        "id" : 1,
+        "name" : "Crisp Chips",
+        "category" : "Potato, Chips",
+        "reviews" : 12,
+        "oldPrice" : 10.00,
+        "newPrice" : 8.99,
+        "Description" : "lorem1212jcnbdfdjnjdvn jc nvjnvdojfdonvcj jcidfdiofd vcjn chniodjfd vc xcmodsjfdnvc jcxnviofdsjgfjgpf bvcm vld;kgkm rty iut  bvvcm v rejfrjgf vcd vklsdfj-regjf c virj",
+        "quantity" : 344,
+        "mainImage" : "https://i.ibb.co/HXw34rm/product-image-46.jpg",
+        "sideImage" : "https://i.ibb.co/t4LRBhP/product-image-45-346x310.jpg",
+        "sideImage2" : "https://i.ibb.co/LnpY3pK/product-image-32-346x310.jpg",
+        "sideImage3": "https://i.ibb.co/b5jVPdb/product-image-7.jpg"
+    },
+    {
+        "id" : 2,
+        "name" : "Crisp Chips ID 222",
+        "category" : "Potato, Chips",
+        "reviews" : 12,
+        "oldPrice" : 10.00,
+        "newPrice" : 8.99,
+        "Description" : "lorem1212jcnbdfdjnjdvn jc nvjnvdojfdonvcj jcidfdiofd vcjn chniodjfd vc xcmodsjfdnvc jcxnviofdsjgfjgpf bvcm vld;kgkm rty iut  bvvcm v rejfrjgf vcd vklsdfj-regjf c virj",
+        "quantity" : 344,
+        "mainImage" : "https://i.ibb.co/HXw34rm/product-image-46.jpg",
+        "sideImage" : "https://i.ibb.co/t4LRBhP/product-image-45-346x310.jpg",
+        "sideImage2" : "https://i.ibb.co/LnpY3pK/product-image-32-346x310.jpg",
+        "sideImage3": "https://i.ibb.co/b5jVPdb/product-image-7.jpg"
+    },
+    {
+        "id" : 3,
+        "name" : "Crisp Chips ID 333",
+        "category" : "Potato, Chips",
+        "reviews" : 12,
+        "oldPrice" : 10.00,
+        "newPrice" : 8.99,
+        "Description" : "lorem1212jcnbdfdjnjdvn jc nvjnvdojfdonvcj jcidfdiofd vcjn chniodjfd vc xcmodsjfdnvc jcxnviofdsjgfjgpf bvcm vld;kgkm rty iut  bvvcm v rejfrjgf vcd vklsdfj-regjf c virj",
+        "quantity" : 344,
+        "mainImage" : "https://i.ibb.co/HXw34rm/product-image-46.jpg",
+        "sideImage" : "https://i.ibb.co/t4LRBhP/product-image-45-346x310.jpg",
+        "sideImage2" : "https://i.ibb.co/LnpY3pK/product-image-32-346x310.jpg",
+        "sideImage3": "https://i.ibb.co/b5jVPdb/product-image-7.jpg"
+    }
+]
