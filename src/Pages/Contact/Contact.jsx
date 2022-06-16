@@ -25,7 +25,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
 
               <label htmlFor="name">Name*</label>
-              <input type="text" placeholder="Enter Your Name" required
+              <input type="text" placeholder="Enter Your Name"
                 {...register("name", {
                   required: {
                     value: true,
@@ -34,14 +34,14 @@ const Contact = () => {
                 })}
               />
               <label className="label">
-                {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
               </label>
 
               <label htmlFor="email">Email*</label>
               <input
                 type="email"
                 placeholder="Your Email"
-                required
+                // className="input input-bordered w-full max-w-xs"
                 {...register("email", {
                   required: {
                     value: true,
@@ -60,7 +60,19 @@ const Contact = () => {
 
 
               <label htmlFor="message">Message*</label>
-              <textarea type="text" name="message" placeholder="Write Your Message" cols="65" rows="2" required></textarea>
+              <textarea type="text"  placeholder="Write Your Message" cols="65" rows="2" 
+              {
+                ...register("message", {
+                  required:{
+                    value: true,
+                    message : "Please Write here"
+                  }
+                })
+              }
+              ></textarea>
+              <label className="label">
+                {errors.message?.type === 'required' && <span className="label-text-alt text-red-500">{errors.message.message}</span>}
+              </label>
 
 
               <input type="submit" value="SEND" />
