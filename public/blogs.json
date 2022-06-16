@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Abdul Hakim",
-    "tags" : "Tips, Tech",
+    "category" : "Tips, Tech",
     "publisher": "Admin",
     "date": "12th May 2022",
     "comments": [
@@ -30,7 +30,7 @@
   {
     "id": 2,
     "name": "Abdul Mannan",
-    "tags" : "Tips, Tech",
+    "category" : "Tips, Tech",
     "publisher": "Admin",
     "date": "12th May 2022",
     "comments": [
@@ -58,7 +58,7 @@
   {
     "id": 3,
     "name": "Abdul Karim",
-    "tags" : "Tips, Tech",
+    "category" : "Tips, Tech",
     "publisher": "Admin",
     "date": "12th May 2022",
     "comments": [
@@ -86,7 +86,7 @@
   {
     "id": 4,
     "name": "Abdur Rahim",
-    "tags" : "Tips, Tech",
+    "category" : "Tips, Tech",
     "publisher": "Admin",
     "date": "12th May 2022",
     "comments": [
@@ -114,7 +114,7 @@
   {
     "id": 5,
     "name": "Abdul Mamun",
-    "tags" : "Tips, Tech",
+    "category" : "Tips, Tech",
     "publisher": "Admin",
     "date": "12th May 2022",
     "comments": [
