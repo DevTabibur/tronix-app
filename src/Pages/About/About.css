@@ -1,0 +1,113 @@
+/* for team part */
+/* Default CSS */
+*{
+    margin: 0;
+    padding: 0;
+}
+/* Team Section with Hover */
+/* Skewying Background */
+.skewY-bg{
+    padding: 120px 0;
+    color: #fff;
+    position: relative;
+}
+.skewY-bg::before{
+    content: "";
+    background: #1b1b1b;
+    position: absolute;
+    left: 0;
+    top: 60px;
+    bottom: 60px;
+    right: 0;
+    transform: skewY(-3deg);
+    z-index: -111;
+}
+.section-title {
+    text-align: center;
+    padding-bottom: 40px;
+    position: relative;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+.section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+}
+.section-title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #e03a3c;
+    bottom: 0;
+    left: calc(50% - 25px);
+}
+.member {
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #fff;
+    transition: .3s ease-in-out;
+}
+.member:hover, .social{
+    transform: translateY(-15px);
+    opacity: 1;
+}
+
+.member-img{
+    position: relative;
+    overflow: hidden;
+}
+.member-img img{
+    max-width: 100%;
+    height: auto;
+}
+.social {
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    right: 0;
+    opacity: 0;
+    transition: ease-in-out 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.member:hover .social{
+    opacity: 1;
+}
+.member:hover .social a{
+    transform: translateY(20px);
+}
+.social a {
+    margin: 0 3px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    margin: 0 7px;
+    background: #e03a3c;
+    color: #fff;
+    text-decoration: none;
+    transition: ease-in-out .5s;
+
+}
+.social a:hover{
+    background-color: #111;
+    color: #fff;
+}
+.social i {
+    font-size: 18px;
+    line-height: 0;
+}
+.member-info {
+    padding: 25px 15px;
+    color: #000;
+}
