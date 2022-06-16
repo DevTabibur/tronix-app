@@ -14,7 +14,7 @@ import SinglePD from "./Pages/SinglePD/SinglePD";
 function App() {
   return (
     <>
-      <Header />
+      <Header ></Header>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/home" element={<Home/>}></Route>

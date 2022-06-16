@@ -1,6 +1,8 @@
 import React from "react";
 import "./Login.css";
 import { useForm } from "react-hook-form";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF, faGoogle, faTwitter  } from "@fortawesome/free-brands-svg-icons";
 
 const Login = () => {
   const {
@@ -13,34 +15,169 @@ const Login = () => {
   return (
     <div className="bg-gray-50 py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="md:grid grid-cols-2 gap-8 gy-4">
+
           <div className="left-col border rounded-lg">
             <div className="login-form">
-              <h1 className="text-2xl form-title">Login form</h1>
-              <p className="form-sub-title">
+              <h1 className="text-2xl form-title ml-14 my-3">Login form</h1>
+              <p className="form-sub-title mb-3 ml-14">
                 Already have an account? Please Login!
               </p>
 
               <form onSubmit={handleSubmit(onSubmit)}>
                 <label htmlFor="email">Email</label>
-                <input {...register("email", { required: true })} />
-                <p className="text-red-900 font-semibold font-mono">{errors.email?.type === "required" && "⚠ Email is required"}</p>
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  // className="input input-bordered w-full max-w-xs"
+                  {...register("email", {
+                    required: {
+                      value: true,
+                      message: 'Email is Required'
+                    },
+                    pattern: {
+                      value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                      message: 'Provide a valid Email'
+                    }
+                  })}
+                />
+                <label className="label">
+                  {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                  {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                </label>
 
-                <label htmlFor="email">Password</label>
-                <input {...register("password", { required: true })} />
-                <p className="text-red-900 font-semibold font-mono">
-                  {errors.password?.type === "required" &&
-                    "⚠ Password is required"}
-                </p>
+                <label htmlFor="password">Password</label>
+                <input
+                  type="password"
+                  placeholder="Enter Password"
+                  {...register("password", {
+                    required: {
+                      value: true,
+                      message: 'Password is Required'
+                    },
+                    minLength: {
+                      value: 6,
+                      message: 'Must be 6 characters or longer'
+                    }
+                  })} />
+                <label className="label">
+                  {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                  {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                </label>
 
                 <input type="submit" value="LOGIN" />
+
+                <label className="label my-0 py-0">
+                  <span className="label-text-alt">
+                    <div className="form-control my-0 py-0">
+                      <label className="cursor-pointer label my-0 py-0">
+                        <input type="checkbox" className="checkbox mr-6 my-0 py-0" />
+
+                        <span className="label-text my-0 py-0">Remember me</span>
+                      </label>
+                    </div>
+                  </span>
+                  <span className="label-text-alt">
+                    <p className="text-red-500">Forgot Password?</p>
+                  </span>
+                </label>
+
+                <div className="bottom-social-login flex justify-center items-center mt-10">
+                  <div className="label-text my-0 py-0">
+                  <h1 className="text-2xl font-semibold">Login With:
+                  <span>
+                  <FontAwesomeIcon className="hover:text-red-600 text-xl ml-5 mr-5" icon={faFacebookF}/>
+                  <FontAwesomeIcon className="hover:text-red-600 text-xl mr-5" icon={faGoogle}/>
+                  <FontAwesomeIcon className="hover:text-red-600 text-xl " icon={faTwitter}/>
+                  </span>
+                  </h1>
+                  </div>
+                </div>
+
+
+
+
+
               </form>
             </div>
           </div>
 
           <div className="right-col">
             <div className="register-form">
-              <h1>Register form</h1>
+              <div className="left-col border rounded-lg">
+                <div className="login-form">
+                  <h1 className="text-2xl form-title ml-14 my-3">Register form</h1>
+                  <p className="form-sub-title mb-3 ml-14">
+                    Are you new here? Please Register!
+                  </p>
+
+                  <form onSubmit={handleSubmit(onSubmit)}>
+
+                    <label htmlFor="email">Email</label>
+                    <input
+                      type="email"
+                      placeholder="Your Email"
+                      // className="input input-bordered w-full max-w-xs"
+                      {...register("email", {
+                        required: {
+                          value: true,
+                          message: 'Email is Required'
+                        },
+                        pattern: {
+                          value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                          message: 'Provide a valid Email'
+                        }
+                      })}
+                    />
+                    <label className="label">
+                      {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                      {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                    </label>
+
+                    <label htmlFor="password">Password</label>
+                    <input
+                      type="password"
+                      placeholder="Enter Password"
+                      {...register("password", {
+                        required: {
+                          value: true,
+                          message: 'Password is Required'
+                        },
+                        minLength: {
+                          value: 6,
+                          message: 'Must be 6 characters or longer'
+                        }
+                      })} />
+                    <label className="label">
+                      {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                      {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                    </label>
+
+                    <label htmlFor="confirm password">Confirm Password</label>
+                    <input
+                      type="password"
+                      placeholder="Confirm Password"
+                      {...register("password", {
+                        required: {
+                          value: true,
+                          message: 'Password is Required'
+                        },
+                        minLength: {
+                          value: 6,
+                          message: 'Must be 6 characters or longer'
+                        }
+                      })} />
+                    <label className="label">
+                      {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                      {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                    </label>
+
+                    <input type="submit" value="LOGIN" />
+
+                  </form>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
