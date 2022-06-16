@@ -25,7 +25,7 @@ const Login = () => {
               </p>
 
               <form onSubmit={handleSubmit(onSubmit)}>
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email" className=" my-0 py-0">Email</label>
                 <input
                   type="email"
                   placeholder="Your Email"
@@ -41,12 +41,12 @@ const Login = () => {
                     }
                   })}
                 />
-                <label className="label">
+                <label className="label my-0 py-0">
                   {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
                   {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
                 </label>
 
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password" className=" my-0 py-0">Password</label>
                 <input
                   type="password"
                   placeholder="Enter Password"
@@ -60,7 +60,7 @@ const Login = () => {
                       message: 'Must be 6 characters or longer'
                     }
                   })} />
-                <label className="label">
+                <label className="label my-0 py-0">
                   {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                   {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                 </label>
@@ -83,7 +83,7 @@ const Login = () => {
                 </label>
 
                 <div className="bottom-social-login flex justify-center items-center mt-10">
-                  <div className="label-text my-0 py-0">
+                  <div className="label-text">
                   <h1 className="text-2xl font-semibold">Login With:
                   <span>
                   <FontAwesomeIcon className="hover:text-red-600 text-xl ml-5 mr-5" icon={faFacebookF}/>
@@ -113,7 +113,7 @@ const Login = () => {
 
                   <form onSubmit={handleSubmit(onSubmit)}>
 
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email" className=" my-0 py-0">Email</label>
                     <input
                       type="email"
                       placeholder="Your Email"
@@ -129,12 +129,12 @@ const Login = () => {
                         }
                       })}
                     />
-                    <label className="label">
+                    <label className="label my-0 py-0">
                       {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
                       {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
                     </label>
 
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password" className=" my-0 py-0">Password</label>
                     <input
                       type="password"
                       placeholder="Enter Password"
@@ -148,12 +148,12 @@ const Login = () => {
                           message: 'Must be 6 characters or longer'
                         }
                       })} />
-                    <label className="label">
+                    <label className="label my-0 py-0">
                       {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                       {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                     </label>
 
-                    <label htmlFor="confirm password">Confirm Password</label>
+                    <label htmlFor="confirm password" className=" my-0 py-0">Confirm Password</label>
                     <input
                       type="password"
                       placeholder="Confirm Password"
@@ -167,7 +167,7 @@ const Login = () => {
                           message: 'Must be 6 characters or longer'
                         }
                       })} />
-                    <label className="label">
+                    <label className="label my-0 py-0">
                       {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                       {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                     </label>
