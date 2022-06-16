@@ -8,20 +8,20 @@ const Blog = () => {
 
   return (
     <>
-      <section className="text-gray-600 body-font">
+      <section className="text-gray-600 body-font  bg-gray-50">
 
         <div className="container px-5 py-24 mx-auto">
+        <div className="section-title">
+                <h2>Latest Blogs</h2>
+                <p className="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, sunt?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, assumenda mollitia praesentium excepturi iure neque earum? Corrupti, molestias dolorum.</p>
+              </div>
           <div className="flex flex-wrap -m-4">
-
           {
             blogs.map(blog => <ShowBlog 
               key={blog.id}
               blog={blog}
             />)
           }
-            
-
-
 
           </div>
         </div>
