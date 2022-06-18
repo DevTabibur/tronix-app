@@ -3,7 +3,6 @@ import useBlogs from '../Hooks/useBlogs';
 import './Blog.css';
 
 const Blog = () => {
-  ;
   const [blogs] = useBlogs();
 
   return (

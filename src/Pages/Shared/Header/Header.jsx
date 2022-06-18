@@ -19,6 +19,9 @@ const Header = () => {
       <li className="mr-2 mb-2">
         <Link to="/contact">Contact</Link>
       </li>
+      <li className="mr-2 mb-2">
+        <Link to="/dashboard">Dashboard</Link>
+      </li>
     </>,
   ];
 
