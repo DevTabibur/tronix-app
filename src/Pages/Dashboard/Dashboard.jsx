@@ -46,8 +46,8 @@ const Dashboard = () => {
       <div className='container mx-auto px-4'>
         <div className="md:flex">
 
-          <div className="flex-auto w-20 ">
-            <button onClick={toggleDrawer}>
+          <div className="flex-auto w-20">
+            <button className='my-0 py-3' onClick={toggleDrawer}>
               <FontAwesomeIcon icon={faBars} />
             </button>
             <Drawer
