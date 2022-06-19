@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "name": "Abdul Hakim",
     "category" : "Tips, Tech",
     "publisher": "Admin",
@@ -28,7 +27,6 @@
     "description" : "loremsjdsjhns csnbfudhfio cvndufhirefrdf vcnf edriegjf mn jd fhre9jgf niehfgidgvfvn cj ifhefjdvnc n hveofdnvj"
   },
   {
-    "id": 2,
     "name": "Abdul Mannan",
     "category" : "Tips, Tech",
     "publisher": "Admin",
@@ -56,7 +54,6 @@
     "description" : "loremsjdsjhns csnbfudhfio cvndufhirefrdf vcnf edriegjf mn jd fhre9jgf niehfgidgvfvn cj ifhefjdvnc n hveofdnvj"
   },
   {
-    "id": 3,
     "name": "Abdul Karim",
     "category" : "Tips, Tech",
     "publisher": "Admin",
@@ -84,7 +81,6 @@
     "description" : "loremsjdsjhns csnbfudhfio cvndufhirefrdf vcnf edriegjf mn jd fhre9jgf niehfgidgvfvn cj ifhefjdvnc n hveofdnvj"
   },
   {
-    "id": 4,
     "name": "Abdur Rahim",
     "category" : "Tips, Tech",
     "publisher": "Admin",
@@ -112,7 +108,6 @@
     "description" : "loremsjdsjhns csnbfudhfio cvndufhirefrdf vcnf edriegjf mn jd fhre9jgf niehfgidgvfvn cj ifhefjdvnc n hveofdnvj"
   },
   {
-    "id": 5,
     "name": "Abdul Mamun",
     "category" : "Tips, Tech",
     "publisher": "Admin",

@@ -1,6 +1,5 @@
 [
     {
-        "id" : 1,
         "name" : "Crisp Chips",
         "category" : "Potato, Chips",
         "reviews" : 12,
@@ -14,7 +13,6 @@
         "sideImage3": "https://i.ibb.co/b5jVPdb/product-image-7.jpg"
     },
     {
-        "id" : 2,
         "name" : "Crisp Chips ID 222",
         "category" : "Potato, Chips",
         "reviews" : 12,
@@ -28,7 +26,6 @@
         "sideImage3": "https://i.ibb.co/b5jVPdb/product-image-7.jpg"
     },
     {
-        "id" : 3,
         "name" : "Crisp Chips ID 333",
         "category" : "Potato, Chips",
         "reviews" : 12,

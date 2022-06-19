@@ -93,11 +93,6 @@ const Login = () => {
                   </h1>
                   </div>
                 </div>
-
-
-
-
-
               </form>
             </div>
           </div>

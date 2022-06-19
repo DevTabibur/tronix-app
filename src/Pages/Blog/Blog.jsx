@@ -17,7 +17,7 @@ const Blog = () => {
           <div className="flex flex-wrap -m-4">
           {
             blogs.map(blog => <ShowBlog 
-              key={blog.id}
+              key={blog._id}
               blog={blog}
             />)
           }
@@ -32,7 +32,7 @@ const Blog = () => {
 }
 
 const ShowBlog = ({blog}) =>{
-  const {id, name, category, publisher, date, comments, image, description} = blog;
+  const {_id, name, category, publisher, date, comments, image, description} = blog;
   return(
     <div className="p-4 md:w-1/3">
               <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">

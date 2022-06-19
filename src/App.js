@@ -12,6 +12,7 @@ import Blog from "./Pages/Blog/Blog";
 import SinglePD from "./Pages/SinglePD/SinglePD";
 import Profile from "./Pages/Dashboard/Profile/Profile";
 import PostBlog from "./Pages/Post/PostBlog/PostBlog";
+import PostProducts from "./Pages/Post/PostProducts/PostProducts";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route index element={<Profile />}></Route>
           <Route path="profile" element={<Profile />}></Route>
           <Route path="post-blog" element={<PostBlog />}></Route>
+          <Route path="post-products" element={<PostProducts />}></Route>
 
         </Route>
 
