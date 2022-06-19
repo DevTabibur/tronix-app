@@ -21,28 +21,28 @@ const Dashboard = () => {
         <Link className='dashboard-menu shadow rounded' to="profile">Profile</Link>
       </li>
       <li className=" my-10">
-        <Link className='dashboard-menu shadow rounded' to="/my-cart">My Cart</Link>
+        <Link className='dashboard-menu shadow rounded' to="my-cart">My Cart</Link>
       </li>
       <li className=" my-10">
-        <Link className='dashboard-menu shadow rounded' to="/my-wishlist">My Wishlist</Link>
+        <Link className='dashboard-menu shadow rounded' to="my-wishlist">My Wishlist</Link>
       </li>
       <li className=" my-10">
-        <Link className='dashboard-menu shadow rounded' to="/admin">Admin</Link>
+        <Link className='dashboard-menu shadow rounded' to="admin">Admin</Link>
       </li>
       <li className=" my-10">
-        <Link className='dashboard-menu shadow rounded' to="/post-blog">Post Blog</Link>
+        <Link className='dashboard-menu shadow rounded' to="post-blog">Post Blog</Link>
       </li>
       <li className=" my-10">
-        <Link className='dashboard-menu shadow rounded' to="/manage-products">Manage Products</Link>
+        <Link className='dashboard-menu shadow rounded' to="manage-products">Manage Products</Link>
       </li>
       <li className=" my-10">
-        <Link className='dashboard-menu shadow rounded' to="/post-products">Post Products</Link>
+        <Link className='dashboard-menu shadow rounded' to="post-products">Post Products</Link>
       </li>
     </ul>,
   ];
 
   return (
-    <>
+    <div className='py-6'>
       <div className='container mx-auto px-4'>
         <div className="md:flex">
 
@@ -66,7 +66,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

@@ -11,6 +11,7 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 import Blog from "./Pages/Blog/Blog";
 import SinglePD from "./Pages/SinglePD/SinglePD";
 import Profile from "./Pages/Dashboard/Profile/Profile";
+import PostBlog from "./Pages/Post/PostBlog/PostBlog";
 
 function App() {
   return (
@@ -23,14 +24,13 @@ function App() {
 
         {/* Load single Data */}
         <Route path="/home/:id" element={<SinglePD />}></Route>
-        <Route path="/:id" element={<SinglePD />}></Route>
+        {/* <Route path="/:id" element={<SinglePD />}></Route> */}
         {/* dashboard routes */}
         <Route path="/dashboard" element={<Dashboard />}>
           <Route index element={<Profile />}></Route>
-          <Route path="profile" element={<Profile />}>
-            <Route path="update-profile"></Route>
-            <Route path="update-address"></Route>
-          </Route>
+          <Route path="profile" element={<Profile />}></Route>
+          <Route path="post-blog" element={<PostBlog />}></Route>
+
         </Route>
 
         <Route path="/blog" element={<Blog />}></Route>
