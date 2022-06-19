@@ -17,24 +17,27 @@ function App() {
     <>
       <Header ></Header>
       <Routes>
-        <Route path="/" element={<Home/>}></Route>
-        <Route path="/home" element={<Home/>}></Route>
-        <Route path="/shop" element={<Shop/>}></Route>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/home" element={<Home />}></Route>
+        <Route path="/shop" element={<Shop />}></Route>
 
         {/* Load single Data */}
-        <Route path="/home/:id" element={<SinglePD/>}></Route>
-        <Route path="/:id" element={<SinglePD/>}></Route>
+        <Route path="/home/:id" element={<SinglePD />}></Route>
+        <Route path="/:id" element={<SinglePD />}></Route>
         {/* dashboard routes */}
-        <Route path="/dashboard" element={<Dashboard/>}>
-          <Route index element={<Profile/>}></Route>
-          <Route path="profile" element={<Profile/>}></Route>
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route index element={<Profile />}></Route>
+          <Route path="profile" element={<Profile />}>
+            <Route path="update-profile"></Route>
+            <Route path="update-address"></Route>
+          </Route>
         </Route>
-        
-        <Route path="/blog" element={<Blog/>}></Route>
-        <Route path="/checkout" element={<Checkout/>}></Route>
-        <Route path="/contact" element={<Contact/>}></Route>
-        <Route path="/about" element={<About/>}></Route>
-        <Route path="/login" element={<Login/>}></Route>
+
+        <Route path="/blog" element={<Blog />}></Route>
+        <Route path="/checkout" element={<Checkout />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/login" element={<Login />}></Route>
       </Routes>
       {/* <Footer/> */}
     </>

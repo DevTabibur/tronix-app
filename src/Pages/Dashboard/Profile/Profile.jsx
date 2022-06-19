@@ -33,8 +33,8 @@ const Profile = () => {
                             </ul> */}
 
                             <div className="links md:flex">
-                                <button className="follow">Follow</button>
-                                <button className="view ">View profile</button>
+                                <button className="follow">Update Profile</button>
+                                <button className="view ">Update Address</button>
                             </div>
                         </div>
                     </div>
@@ -44,4 +44,4 @@ const Profile = () => {
     )
 }
 
-export default Profile
+export default Profile;
