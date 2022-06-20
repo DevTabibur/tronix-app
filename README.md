@@ -12,3 +12,4 @@ This project was tailwind with [LIVE WEBSITE]().
 4. npm i swiper
 5. for brand icons npm install --save @fortawesome/free-brands-svg-icons
 6. npm i react-modern-drawer
+7. npm install firebase

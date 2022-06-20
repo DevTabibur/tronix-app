@@ -13,6 +13,7 @@ import SinglePD from "./Pages/SinglePD/SinglePD";
 import Profile from "./Pages/Dashboard/Profile/Profile";
 import PostBlog from "./Pages/Post/PostBlog/PostBlog";
 import PostProducts from "./Pages/Post/PostProducts/PostProducts";
+import SingleBlog from "./SingleBlog/SingleBlog";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         </Route>
 
         <Route path="/blog" element={<Blog />}></Route>
+        <Route path="/blog/:id" element={<SingleBlog />}></Route>
         <Route path="/checkout" element={<Checkout />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/about" element={<About />}></Route>
