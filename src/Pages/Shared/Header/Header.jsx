@@ -3,8 +3,12 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import auth from "../../../Firebase/firebase.init";
 
 const Header = () => {
+  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  console.log('user', user);
   const menu = [
     <>
       <li className="mr-2 mb-2">

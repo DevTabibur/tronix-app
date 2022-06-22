@@ -5,10 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faGoogle, faTwitter  } from "@fortawesome/free-brands-svg-icons";
 import auth from "../../Firebase/firebase.init";
 import Register from "../Shared/Register/Register";
+import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
 const Login = () => {
-  // const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-
+  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  console.log('user', user);
   const {
     register,
     formState: { errors },
@@ -91,7 +92,7 @@ const Login = () => {
                   <h1 className="text-2xl font-semibold">Login With:
                   <span>
                   <FontAwesomeIcon className="hover:text-red-600 text-xl ml-5 mr-5" icon={faFacebookF}/>
-                  <FontAwesomeIcon className="hover:text-red-600 text-xl mr-5" icon={faGoogle}/>
+                  <FontAwesomeIcon className="hover:text-red-600 text-xl mr-5" icon={faGoogle} onClick={() => signInWithGoogle()}/>
                   <FontAwesomeIcon className="hover:text-red-600 text-xl " icon={faTwitter}/>
                   </span>
                   </h1>
