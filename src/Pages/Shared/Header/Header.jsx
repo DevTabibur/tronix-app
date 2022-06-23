@@ -3,12 +3,12 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../Firebase/firebase.init";
-
+import {signOut} from 'firebase/auth'
 const Header = () => {
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-  console.log('user', user);
+  const [user, loading, error] = useAuthState(auth);
+console.log(user);
   const menu = [
     <>
       <li className="mr-2 mb-2">
@@ -28,6 +28,8 @@ const Header = () => {
       </li>
     </>,
   ];
+
+
 
   return (
     <div className="">
@@ -133,7 +135,7 @@ const Header = () => {
               <div className="dropdown dropdown-end">
                 <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
-                    <img src="https://api.lorem.space/image/face?hash=33791" />
+                    { user ? <img src={user.photoURL}></img> : <img src="https://api.lorem.space/image/face?hash=33791" />}
                   </div>
                 </label>
                 <ul
@@ -141,16 +143,16 @@ const Header = () => {
                   className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
                 >
                   <li>
-                    <a className="justify-between">
+                    <Link to="/dashboard/profile" className="justify-between">
                       Profile
                       <span className="badge">New</span>
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a>Settings</a>
                   </li>
                   <li>
-                    <a>Logout</a>
+                    { user ? <a onClick={()=>signOut(auth)}>Logout</a> : <Link to="/login">Login</Link>}
                   </li>
                 </ul>
               </div>
