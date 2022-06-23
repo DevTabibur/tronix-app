@@ -14,6 +14,7 @@ import Profile from "./Pages/Dashboard/Profile/Profile";
 import PostBlog from "./Pages/Post/PostBlog/PostBlog";
 import PostProducts from "./Pages/Post/PostProducts/PostProducts";
 import SingleBlog from "./SingleBlog/SingleBlog";
+import RequireAuth from "./Pages/Shared/RequireAuth/requireAuth";
 
 function App() {
   return (
@@ -28,7 +29,11 @@ function App() {
         <Route path="/home/:id" element={<SinglePD />}></Route>
         {/* <Route path="/:id" element={<SinglePD />}></Route> */}
         {/* dashboard routes */}
-        <Route path="/dashboard" element={<Dashboard />}>
+        <Route path="/dashboard" element={
+          <RequireAuth>
+            <Dashboard />
+          </RequireAuth>
+        }>
           <Route index element={<Profile />}></Route>
           <Route path="profile" element={<Profile />}></Route>
           <Route path="post-blog" element={<PostBlog />}></Route>

@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../Firebase/firebase.init";
-import {signOut} from 'firebase/auth'
+import { signOut } from 'firebase/auth'
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
-console.log(user);
+  console.log(user);
   const menu = [
     <>
       <li className="mr-2 mb-2">
@@ -76,7 +76,7 @@ console.log(user);
               <div className="dropdown dropdown-end mr-2">
                 <label tabIndex="0" className="btn btn-ghost btn-circle">
                   <div className="indicator">
-                  <FontAwesomeIcon className="h-5 w-5" icon={faHeart}/>
+                    <FontAwesomeIcon className="h-5 w-5" icon={faHeart} />
                     <span className="badge badge-sm indicator-item badge-secondary">10</span>
                   </div>
                 </label>
@@ -132,30 +132,31 @@ console.log(user);
                 </div>
               </div>
 
-              <div className="dropdown dropdown-end">
-                <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
-                  <div className="w-10 rounded-full">
-                    { user ? <img src={user.photoURL}></img> : <img src="https://api.lorem.space/image/face?hash=33791" />}
-                  </div>
-                </label>
-                <ul
-                  tabIndex="0"
-                  className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-                >
-                  <li>
-                    <Link to="/dashboard/profile" className="justify-between">
-                      Profile
-                      <span className="badge">New</span>
-                    </Link>
-                  </li>
-                  <li>
-                    <a>Settings</a>
-                  </li>
-                  <li>
-                    { user ? <a onClick={()=>signOut(auth)}>Logout</a> : <Link to="/login">Login</Link>}
-                  </li>
-                </ul>
-              </div>
+              {user &&
+                <div className="dropdown dropdown-end">
+                  <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
+                    <div className="w-10 rounded-full">
+                      {user && <img src={user.photoURL}></img>}</div>
+                  </label>
+                  <ul
+                    tabIndex="0"
+                    className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                  >
+                    <li>
+                      <Link to="/dashboard/profile" className="justify-between">
+                        Profile
+                        <span className="badge">New</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <a>Settings</a>
+                    </li>
+                    <li>
+                      {user ? <a onClick={() => signOut(auth)}>Logout</a> : <Link to="/login">Login</Link>}
+                    </li>
+                  </ul>
+                </div>
+              }
             </div>
           </div>
         </div>

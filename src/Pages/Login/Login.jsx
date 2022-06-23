@@ -8,7 +8,14 @@ import Register from "../Shared/Register/Register";
 import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { error } from "daisyui/src/colors/colorNames";
 import Loading from "../Shared/Loading/Loading";
+import { useNavigate, useLocation } from "react-router-dom";
 const Login = () => {
+  // for returning user the exact page he wants to enter after login
+  const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+
+
   const {
     register,
     formState: { errors },
@@ -23,11 +30,6 @@ const Login = () => {
     eError,
   ] = useSignInWithEmailAndPassword(auth);
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  // const [errors, setErrors] = useState('');
-
-
 
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
@@ -37,6 +39,12 @@ const Login = () => {
   if ( gLoading || eLoading) {
     return <Loading/>
   }
+
+  // if user logged-in then it'll take user the page what they want to see the page
+  if(gUser || eUser){
+    navigate(from, { replace: true });
+  }
+  
 
   // for error showing messages
   let signInError;
