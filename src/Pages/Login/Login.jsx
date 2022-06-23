@@ -1,21 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF, faGoogle, faTwitter  } from "@fortawesome/free-brands-svg-icons";
+import { faFacebookF, faGoogle, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import auth from "../../Firebase/firebase.init";
 import Register from "../Shared/Register/Register";
-import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-
+import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { error } from "daisyui/src/colors/colorNames";
+import Loading from "../Shared/Loading/Loading";
 const Login = () => {
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-  console.log('user', user);
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  const [
+    signInWithEmailAndPassword,
+    eUser,
+    eLoading,
+    eError,
+  ] = useSignInWithEmailAndPassword(auth);
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  // const [errors, setErrors] = useState('');
+
+
+
+  const onSubmit = (data) => {
+    signInWithEmailAndPassword(data.email, data.password);
+    console.log(data);
+  };
+
+  if ( gLoading || eLoading) {
+    return <Loading/>
+  }
+
+  // for error showing messages
+  let signInError;
+  if (eError || gError) {
+    signInError = <small><p className="text-red-500">{eError?.message || gError?.message}</p></small>
+  }
 
   return (
     <div className="bg-gray-50 py-12">
@@ -70,6 +97,7 @@ const Login = () => {
                   {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                 </label>
 
+                {signInError}
                 <input type="submit" value="LOGIN" />
 
                 <label className="label my-0 py-0">
@@ -89,13 +117,13 @@ const Login = () => {
 
                 <div className="bottom-social-login flex justify-center items-center mt-10">
                   <div className="label-text">
-                  <h1 className="text-2xl font-semibold">Login With:
-                  <span>
-                  <FontAwesomeIcon className="hover:text-red-600 text-xl ml-5 mr-5" icon={faFacebookF}/>
-                  <FontAwesomeIcon className="hover:text-red-600 text-xl mr-5" icon={faGoogle} onClick={() => signInWithGoogle()}/>
-                  <FontAwesomeIcon className="hover:text-red-600 text-xl " icon={faTwitter}/>
-                  </span>
-                  </h1>
+                    <h1 className="text-2xl font-semibold">Login With:
+                      <span>
+                        <FontAwesomeIcon className="hover:text-red-600 text-xl ml-5 mr-5" icon={faFacebookF} />
+                        <FontAwesomeIcon className="hover:text-red-600 text-xl mr-5" icon={faGoogle} onClick={() => signInWithGoogle()} />
+                        <FontAwesomeIcon className="hover:text-red-600 text-xl " icon={faTwitter} />
+                      </span>
+                    </h1>
                   </div>
                 </div>
               </form>
@@ -104,7 +132,7 @@ const Login = () => {
 
           <div className="right-col">
 
-            <Register/>
+            <Register />
           </div>
         </div>
       </div>
