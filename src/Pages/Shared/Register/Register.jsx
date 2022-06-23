@@ -1,14 +1,27 @@
 import React from 'react'
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import auth from '../../../Firebase/firebase.init';
 
 const Register = () => {
+  const [
+    createUserWithEmailAndPassword,
+    cUser,
+    cLoading,
+    cError,
+  ] = useCreateUserWithEmailAndPassword(auth);
+
     const {
         register,
         formState: { errors },
         handleSubmit,
       } = useForm();
-      
-      const onSubmit = (data) => console.log(data);
+git
+      const onSubmit = (data) => {
+        console.log(data);
+        createUserWithEmailAndPassword(data.email, data.password)
+      };
+
   return (
     <div className="register-form">
               <div className="left-col border rounded-lg">
@@ -19,6 +32,23 @@ const Register = () => {
                   </p>
 
                   <form onSubmit={handleSubmit(onSubmit)}>
+
+                    <label htmlFor="email" className=" my-0 py-0">Name</label>
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      // className="input input-bordered w-full max-w-xs"
+                      {...register("name", {
+                        required: {
+                          value: true,
+                          message: 'Name is Required'
+                        }
+                      })}
+                    />
+                    <label className="label my-0 py-0">
+                      {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
+                    </label>
+
 
                     <label htmlFor="email" className=" my-0 py-0">Email</label>
                     <input
@@ -60,7 +90,7 @@ const Register = () => {
                       {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                     </label>
 
-                    <label htmlFor="confirm password" className=" my-0 py-0">Confirm Password</label>
+                    {/* <label htmlFor="confirm password" className=" my-0 py-0">Confirm Password</label>
                     <input
                       type="password"
                       placeholder="Confirm Password"
@@ -77,7 +107,7 @@ const Register = () => {
                     <label className="label my-0 py-0">
                       {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                       {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
-                    </label>
+                    </label> */}
 
                     <input type="submit" value="REGISTER" />
 
