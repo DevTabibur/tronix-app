@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import "./Login.css";
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,6 +9,7 @@ import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from
 import { error } from "daisyui/src/colors/colorNames";
 import Loading from "../Shared/Loading/Loading";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 const Login = () => {
   // for returning user the exact page he wants to enter after login
   const navigate = useNavigate();
@@ -33,17 +34,22 @@ const Login = () => {
 
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
-    console.log(data);
   };
 
   if ( gLoading || eLoading) {
     return <Loading/>
   }
 
-  // if user logged-in then it'll take user the page what they want to see the page
+  // if user logged-in then it'll take user the page what they want to see the page,
+  // for removing warning we use useEffect here
+  // useEffect(()=>{
+  //   if(gUser || eUser){
+  //     navigate(from, { replace: true });
+  //   }
+  // }, [])
   if(gUser || eUser){
-    navigate(from, { replace: true });
-  }
+         navigate(from, { replace: true });
+       }
   
 
   // for error showing messages
