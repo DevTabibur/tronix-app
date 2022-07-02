@@ -14,3 +14,5 @@ This project was tailwind with [LIVE WEBSITE]().
 6. npm i react-modern-drawer
 7. npm install firebase
 8. npm install --save react-firebase-hooks
+9. npm i react-query
+10. npm install --save react-toastify

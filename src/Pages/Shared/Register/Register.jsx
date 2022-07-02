@@ -30,9 +30,15 @@ const Register = () => {
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
-    navigate("/home");
 
   };
+
+  // get all type of user
+  if(cUser || eUser){
+    console.log(cUser || eUser);
+    // navigate("/home");
+
+  }
 
   // for loader
   if (gLoading || eLoading || updating) {
