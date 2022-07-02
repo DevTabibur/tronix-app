@@ -47,7 +47,7 @@ const Register = () => {
 
   return (
     <div className="register-form">
-      <div className="left-col border rounded-lg">
+      <div className="left-col">
         <div className="login-form">
           <h1 className="text-2xl form-title ml-14 my-3">Register form</h1>
           <p className="form-sub-title mb-3 ml-14">

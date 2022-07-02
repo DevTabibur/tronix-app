@@ -63,7 +63,7 @@ const Login = () => {
       <div className="container mx-auto px-4">
         <div className="md:grid grid-cols-2 gap-8 gy-4">
 
-          <div className="left-col border rounded-lg">
+          <div className="left-col border rounded-lg p-10">
             <div className="login-form">
               <h1 className="text-2xl form-title ml-14 my-3">Login form</h1>
               <p className="form-sub-title mb-3 ml-14">
@@ -144,7 +144,7 @@ const Login = () => {
             </div>
           </div>
 
-          <div className="right-col">
+          <div className="right-col border rounded-lg p-10">
 
             <Register />
           </div>
