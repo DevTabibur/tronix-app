@@ -18,6 +18,7 @@ import {
 import { error } from "daisyui/src/colors/colorNames";
 import Loading from "../Shared/Loading/Loading";
 import { useNavigate, useLocation } from "react-router-dom";
+import useToken from "../Hooks/useToken";
 const Login = () => {
   // for returning user the exact page he wants to enter after login
   const navigate = useNavigate();
@@ -39,13 +40,14 @@ const Login = () => {
     setEmail(data.email);
   };
 
+  const [token] = useToken(eUser || gUser);
   // if user logged-in then it'll take user the page what they want to see the page,
   let from = location.state?.from?.pathname || "/";
   useEffect(() => {
-    if (eUser || gUser) {
+    if (token) {
       navigate(from, { replace: true });
     }
-  }, [eUser, gUser, from, navigate]);
+  }, [token, from, navigate]);
 
   // for reset/forgetting password
   const [sendPasswordResetEmail, resetSending, resetError] =
