@@ -16,3 +16,4 @@ This project was tailwind with [LIVE WEBSITE]().
 8. npm install --save react-firebase-hooks
 9. npm i react-query
 10. npm install --save react-toastify
+11. 

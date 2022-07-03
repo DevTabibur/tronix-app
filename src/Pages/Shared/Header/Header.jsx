@@ -8,7 +8,7 @@ import auth from "../../../Firebase/firebase.init";
 import { signOut } from 'firebase/auth'
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
-  console.log(user);
+  // console.log(user);
   const menu = [
     <>
       <li className="mr-2 mb-2">
