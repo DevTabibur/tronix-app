@@ -15,6 +15,7 @@ import PostBlog from "./Pages/Post/PostBlog/PostBlog";
 import PostProducts from "./Pages/Post/PostProducts/PostProducts";
 import SingleBlog from "./SingleBlog/SingleBlog";
 import RequireAuth from "./Pages/Shared/RequireAuth/requireAuth";
+import AllUser from "./Pages/Dashboard/AllUser/AllUser";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         }>
           <Route index element={<Profile />}></Route>
           <Route path="profile" element={<Profile />}></Route>
+          <Route path="all-user" element={<AllUser />}></Route>
           <Route path="post-blog" element={<PostBlog />}></Route>
           <Route path="post-products" element={<PostProducts />}></Route>
 

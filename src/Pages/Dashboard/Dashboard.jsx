@@ -18,6 +18,9 @@ const Dashboard = () => {
   const menu = [
     <ul className='pl-0 m-0'>
       <li className=" my-10">
+        <Link className='dashboard-menu shadow rounded' to="all-user">All User</Link>
+      </li>
+      <li className=" my-10">
         <Link className='dashboard-menu shadow rounded' to="profile">Profile</Link>
       </li>
       <li className=" my-10">

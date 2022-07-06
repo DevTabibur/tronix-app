@@ -29,6 +29,12 @@ const Header = () => {
     </>,
   ];
 
+  const logout = () =>{
+    // for sign out
+    signOut(auth)
+    // when a user logout, we'll be vanish the token
+    localStorage.removeItem('accessToken');
+  }
 
 
   return (
@@ -152,7 +158,7 @@ const Header = () => {
                       <a>Settings</a>
                     </li>
                     <li>
-                      {user ? <a onClick={() => signOut(auth)}>Logout</a> : <Link to="/login">Login</Link>}
+                      {user ? <a onClick={logout}>Logout</a> : <Link to="/login">Login</Link>}
                     </li>
                   </ul>
                 </div>
@@ -167,14 +173,7 @@ const Header = () => {
 
 const HeaderTop = () => {
   return (
-    <div className="bg-black">
-      <div className="container mx-auto px-4 text-white ">
-        <div className="grid grid-cols-2 gap-4">
-          <div className="text-left">11</div>
-          <div className="text-right">22</div>
-        </div>
-      </div>
-    </div>
+    <></>
   );
 };
 
