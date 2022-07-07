@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../Firebase/firebase.init";
-import { signOut } from 'firebase/auth'
+import { signOut } from "firebase/auth";
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
   // console.log(user);
   const menu = [
+
     <>
       <li className="mr-2 mb-2">
         <Link to="/home">Home</Link>
@@ -26,16 +27,18 @@ const Header = () => {
       <li className="mr-2 mb-2">
         <Link to="/dashboard">Dashboard</Link>
       </li>
+      { user ? <li></li> : <li className="mr-2 mb-2">
+        <Link to="/login">Login</Link>
+      </li>}
     </>,
   ];
 
-  const logout = () =>{
+  const logout = () => {
     // for sign out
-    signOut(auth)
+    signOut(auth);
     // when a user logout, we'll be vanish the token
-    localStorage.removeItem('accessToken');
-  }
-
+    localStorage.removeItem("accessToken");
+  };
 
   return (
     <div className="">
@@ -83,7 +86,9 @@ const Header = () => {
                 <label tabIndex="0" className="btn btn-ghost btn-circle">
                   <div className="indicator">
                     <FontAwesomeIcon className="h-5 w-5" icon={faHeart} />
-                    <span className="badge badge-sm indicator-item badge-secondary">10</span>
+                    <span className="badge badge-sm indicator-item badge-secondary">
+                      10
+                    </span>
                   </div>
                 </label>
                 <div
@@ -119,7 +124,9 @@ const Header = () => {
                         d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                       />
                     </svg>
-                    <span className="badge badge-sm indicator-item badge-secondary">10</span>
+                    <span className="badge badge-sm indicator-item badge-secondary">
+                      10
+                    </span>
                   </div>
                 </label>
                 <div
@@ -138,11 +145,15 @@ const Header = () => {
                 </div>
               </div>
 
-              {user &&
+              {user && (
                 <div className="dropdown dropdown-end">
-                  <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
+                  <label
+                    tabIndex="0"
+                    className="btn btn-ghost btn-circle avatar"
+                  >
                     <div className="w-10 rounded-full">
-                      {user && <img src={user.photoURL}></img>}</div>
+                      {user && <img src={user.photoURL}></img>}
+                    </div>
                   </label>
                   <ul
                     tabIndex="0"
@@ -158,11 +169,15 @@ const Header = () => {
                       <a>Settings</a>
                     </li>
                     <li>
-                      {user ? <a onClick={logout}>Logout</a> : <Link to="/login">Login</Link>}
+                      {user ? (
+                        <a onClick={logout}>Logout</a>
+                      ) : (
+                        <Link to="/login">Login</Link>
+                      )}
                     </li>
                   </ul>
                 </div>
-              }
+              )}
             </div>
           </div>
         </div>
@@ -172,9 +187,7 @@ const Header = () => {
 };
 
 const HeaderTop = () => {
-  return (
-    <></>
-  );
+  return <></>;
 };
 
 export default Header;

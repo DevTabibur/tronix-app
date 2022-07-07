@@ -8,6 +8,9 @@ import 'react-modern-drawer/dist/index.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link, Outlet } from 'react-router-dom';
+import useAdmin from '../Hooks/useAdmin';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../Firebase/firebase.init';
 
 const Dashboard = () => {
   const [isOpen, setIsOpen] = React.useState(false)
@@ -15,11 +18,15 @@ const Dashboard = () => {
     setIsOpen((prevState) => !prevState)
   }
 
+  // for protected admin url
+  const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
+
   const menu = [
     <ul className='pl-0 m-0'>
-      <li className=" my-10">
+      { admin && <li className=" my-10">
         <Link className='dashboard-menu shadow rounded' to="all-user">All User</Link>
-      </li>
+      </li>}
       <li className=" my-10">
         <Link className='dashboard-menu shadow rounded' to="profile">Profile</Link>
       </li>
@@ -32,15 +39,15 @@ const Dashboard = () => {
       <li className=" my-10">
         <Link className='dashboard-menu shadow rounded' to="admin">Admin</Link>
       </li>
-      <li className=" my-10">
+      { admin && <li className=" my-10">
         <Link className='dashboard-menu shadow rounded' to="post-blog">Post Blog</Link>
-      </li>
+      </li>}
       <li className=" my-10">
         <Link className='dashboard-menu shadow rounded' to="manage-products">Manage Products</Link>
       </li>
-      <li className=" my-10">
+      { admin && <li className=" my-10">
         <Link className='dashboard-menu shadow rounded' to="post-products">Post Products</Link>
-      </li>
+      </li>}
     </ul>,
   ];
 

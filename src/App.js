@@ -16,11 +16,16 @@ import PostProducts from "./Pages/Post/PostProducts/PostProducts";
 import SingleBlog from "./SingleBlog/SingleBlog";
 import RequireAuth from "./Pages/Shared/RequireAuth/requireAuth";
 import AllUser from "./Pages/Dashboard/AllUser/AllUser";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <>
+    <ToastContainer />
+    
       <Header ></Header>
+      
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home />}></Route>
