@@ -18,6 +18,9 @@ import RequireAuth from "./Pages/Shared/RequireAuth/requireAuth";
 import AllUser from "./Pages/Dashboard/AllUser/AllUser";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import MyCart from "./Pages/Dashboard/MyCart/MyCart";
+import MyWishList from "./Pages/Dashboard/MyWishList/MyWishList";
+import Manage from "./Pages/Dashboard/Manage/Manage";
 
 function App() {
   return (
@@ -45,7 +48,10 @@ function App() {
           <Route path="all-user" element={<AllUser />}></Route>
           <Route path="post-blog" element={<PostBlog />}></Route>
           <Route path="post-products" element={<PostProducts />}></Route>
+          <Route path="my-cart" element={<MyCart />}></Route>
 
+          <Route path="manage" element={<Manage />}></Route>
+          <Route path="my-wishlist" element={<MyWishList />}></Route>
         </Route>
 
         <Route path="/blog" element={<Blog />}></Route>

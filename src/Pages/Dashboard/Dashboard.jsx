@@ -36,14 +36,11 @@ const Dashboard = () => {
       <li className=" my-10">
         <Link className='dashboard-menu shadow rounded' to="my-wishlist">My Wishlist</Link>
       </li>
-      <li className=" my-10">
-        <Link className='dashboard-menu shadow rounded' to="admin">Admin</Link>
-      </li>
       { admin && <li className=" my-10">
         <Link className='dashboard-menu shadow rounded' to="post-blog">Post Blog</Link>
       </li>}
       <li className=" my-10">
-        <Link className='dashboard-menu shadow rounded' to="manage-products">Manage Products</Link>
+        <Link className='dashboard-menu shadow rounded' to="manage">Manage Products</Link>
       </li>
       { admin && <li className=" my-10">
         <Link className='dashboard-menu shadow rounded' to="post-products">Post Products</Link>

@@ -27,7 +27,7 @@ const Header = () => {
       <li className="mr-2 mb-2">
         <Link to="/dashboard">Dashboard</Link>
       </li>
-      { user ? <li></li> : <li className="mr-2 mb-2">
+      { user ? '' : <li className="mr-2 mb-2">
         <Link to="/login">Login</Link>
       </li>}
     </>,
@@ -41,8 +41,10 @@ const Header = () => {
   };
 
   return (
-    <div className="">
-      <HeaderTop />
+    <>
+    <HeaderTop />
+
+    <div className="bg-red-100">
 
       <div className="container mx-auto px-4">
         <div className="navbar py-0 my-0">
@@ -159,16 +161,16 @@ const Header = () => {
                     tabIndex="0"
                     className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
                   >
-                    <li>
+                    <li className=" mt-1">
                       <Link to="/dashboard/profile" className="justify-between">
                         Profile
                         <span className="badge">New</span>
                       </Link>
                     </li>
-                    <li>
+                    <li className=" mt-1">
                       <a>Settings</a>
                     </li>
-                    <li>
+                    <li className=" mt-1">
                       {user ? (
                         <a onClick={logout}>Logout</a>
                       ) : (
@@ -183,6 +185,7 @@ const Header = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

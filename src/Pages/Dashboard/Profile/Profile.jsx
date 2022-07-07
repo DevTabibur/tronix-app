@@ -14,17 +14,16 @@ console.log(user)
             <div className="container mx-auto px-4">
                 <div className="flex justify-center items-center">
                     <div className="card bg-red-200">
-                        <div className="img">
+                        {photoURL && <div className="img">
                             <img src={photoURL} alt="avatar"/>
-                        </div>
+                        </div>}
                         <div className="infos">
                             <div className="name">
                                 <h2>{displayName}</h2>
                                 <h4>{email}</h4>
                             </div>
                             <p className="text">
-                                I'm a Front End Developer, follow me to be the first
-                                who see my new work.
+                                Please Update Your BIO..
                             </p>
 
                             {/* <ul className="social">
