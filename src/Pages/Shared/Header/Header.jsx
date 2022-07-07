@@ -187,7 +187,13 @@ const Header = () => {
 };
 
 const HeaderTop = () => {
-  return <></>;
+  return (
+  <div className="bg-red-400 text-white py-2">
+    <div className="container mx-auto px-4">
+      <p>Hello World! you Can shop here!</p>
+    </div>
+  </div>
+  );
 };
 
 export default Header;
