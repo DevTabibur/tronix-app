@@ -4,11 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faGoogle, faTwitter  } from "@fortawesome/free-brands-svg-icons";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../Firebase/firebase.init';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const Profile = () => {
+    const navigate = useNavigate()
     const [user] = useAuthState(auth);
     const {displayName, email, photoURL} = user;
-console.log(user)
+// console.log(user)
+
     return (
         <>
             <div className="container mx-auto px-4">

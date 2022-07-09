@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import useSingleBlog from '../Pages/Hooks/useSingleBlog';
+import useSingleBlog from '../Hooks/useSingleBlog';
 import './SingleBlog.css'
 
 const SingleBlog = () => {

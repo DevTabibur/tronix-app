@@ -13,7 +13,7 @@ import SinglePD from "./Pages/SinglePD/SinglePD";
 import Profile from "./Pages/Dashboard/Profile/Profile";
 import PostBlog from "./Pages/Post/PostBlog/PostBlog";
 import PostProducts from "./Pages/Post/PostProducts/PostProducts";
-import SingleBlog from "./SingleBlog/SingleBlog";
+import SingleBlog from "./Pages/SingleBlog/SingleBlog";
 import RequireAuth from "./Pages/Shared/RequireAuth/requireAuth";
 import AllUser from "./Pages/Dashboard/AllUser/AllUser";
 import { ToastContainer } from "react-toastify";
@@ -21,6 +21,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import MyCart from "./Pages/Dashboard/MyCart/MyCart";
 import MyWishList from "./Pages/Dashboard/MyWishList/MyWishList";
 import Manage from "./Pages/Dashboard/Manage/Manage";
+import RequireAdmin from "./Pages/Shared/RequireAdmin/RequireAdmin";
+
+// demo11  https://www.ryanscomputers.com/
+// demo22  https://www.startech.com.bd/
 
 function App() {
   return (
@@ -45,7 +49,9 @@ function App() {
         }>
           <Route index element={<Profile />}></Route>
           <Route path="profile" element={<Profile />}></Route>
-          <Route path="all-user" element={<AllUser />}></Route>
+          <Route path="all-user" element={<RequireAdmin>
+            <AllUser />
+          </RequireAdmin>}></Route>
           <Route path="post-blog" element={<PostBlog />}></Route>
           <Route path="post-products" element={<PostProducts />}></Route>
           <Route path="my-cart" element={<MyCart />}></Route>
