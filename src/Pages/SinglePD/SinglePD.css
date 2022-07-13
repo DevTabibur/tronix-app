@@ -27,6 +27,10 @@
   position: absolute;
   top: 8%;
   right: 5%;
+  visibility: hidden;
+}
+.box:hover .img-box .links{
+  visibility: visible;
 }
 .box .img-box .links ul li .icons{
   position: relative;
@@ -62,5 +66,8 @@
   transition: 1s;
 }
 .box .details h2, .box .details h6{
+  font-size: 20px;
+}
+.box .details h4{
   font-size: 15px;
 }

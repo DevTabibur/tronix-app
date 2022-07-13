@@ -1,12 +1,12 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Loading from "../Shared/Loading/Loading";
 import "./SinglePD.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartArrowDown, faHeart, faEye } from "@fortawesome/free-solid-svg-icons";
 
-const SinglePD = ({pd, refetch}) => {
+const SinglePD = ({pd, refetch, handleAddToCart}) => {
   const {
     name,
     price,
@@ -22,6 +22,9 @@ const SinglePD = ({pd, refetch}) => {
     sideImage,
     sideImage2,
   } = pd;
+  const id = useParams();
+  const navigate = useNavigate();
+
 
   return (
     <>
@@ -30,17 +33,17 @@ const SinglePD = ({pd, refetch}) => {
               <img src={mainImage} alt="product_img" />
               <div className="links">
                 <ul>
-                  <li className="mb-3 text-xl"><FontAwesomeIcon className="icons" icon={faCartArrowDown} /></li>
+                  <li onClick={()=> handleAddToCart(pd)} className="mb-3 text-xl"><FontAwesomeIcon className="icons" icon={faCartArrowDown} /></li>
                   <li className="mb-3 text-xl"><FontAwesomeIcon className="icons" icon={faHeart} /></li>
                   <li className=" text-xl"><FontAwesomeIcon className="icons" icon={faEye} /></li>
                 </ul>
               </div>
             </div>
-            <div className="details mb-5 text-center mx-auto">
+            <Link to={`/product/${pd._id}`} className="details mb-5 text-center mx-auto">
               <h2 className="font-semibold mb-1">{category}</h2>
-              <h4 className="text-xl font-bold">{name.slice(0, 25)}</h4>
+              <h4 className="">{name.slice(0, 25)}</h4>
               <h6 className="font-mono">${price}</h6>
-            </div>
+            </Link>
           </div>
     </>
   );

@@ -1,6 +1,6 @@
-
 import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
+import useCart from "../Hooks/useCart";
 import Loading from "../Shared/Loading/Loading";
 import SinglePD from "../SinglePD/SinglePD";
 import "./Shop.css";
@@ -24,6 +24,7 @@ const Shop = () => {
         setPages(pages);
       });
   }, []);
+  const [cart, setCart] = useState([]);
 
   // data load all products
   const {
@@ -36,11 +37,16 @@ const Shop = () => {
   if (isLoading) {
     return <Loading></Loading>;
   }
-
+  const handleAddToCart = (pd) => {
+    console.log(pd);
+    // do not do this: cart.push(product);
+    const newCart = [...cart, pd];
+    setCart(newCart);
+  };
   return (
     <>
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl">Products </h2>
+        <h2 className="text-3xl">Product</h2>
         {/* <div className='pagination-btn text-gray-900 font-bold flex'>
             {
               [...Array(pageCount).keys()].map(number => <button onClick={()=>setPages(number)} className={pages === number ? 'selected': ''}>{number + 1}</button>)
@@ -53,10 +59,14 @@ const Shop = () => {
             </select>
           </div> */}
 
-        
         <div className="md:grid grid-cols-4 gap-4 py-10">
-        {products.map((pd) => (
-            <SinglePD key={pd._id} pd={pd} refetch={refetch} />
+          {products.map((pd) => (
+            <SinglePD
+              key={pd._id}
+              pd={pd}
+              refetch={refetch}
+              handleAddToCart={handleAddToCart}
+            />
           ))}
         </div>
       </div>

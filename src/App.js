@@ -17,11 +17,12 @@ import SingleBlog from "./Pages/SingleBlog/SingleBlog";
 import RequireAuth from "./Pages/Shared/RequireAuth/requireAuth";
 import AllUser from "./Pages/Dashboard/AllUser/AllUser";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import MyCart from "./Pages/Dashboard/MyCart/MyCart";
 import MyWishList from "./Pages/Dashboard/MyWishList/MyWishList";
 import Manage from "./Pages/Dashboard/Manage/Manage";
 import RequireAdmin from "./Pages/Shared/RequireAdmin/RequireAdmin";
+import OnePD from "./Pages/Shared/OnePD/OnePD";
 
 // demo11  https://www.ryanscomputers.com/
 // demo22  https://www.startech.com.bd/
@@ -29,10 +30,10 @@ import RequireAdmin from "./Pages/Shared/RequireAdmin/RequireAdmin";
 function App() {
   return (
     <>
-    <ToastContainer />
-    
-      <Header ></Header>
-      
+      <ToastContainer />
+
+      <Header></Header>
+
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home />}></Route>
@@ -42,16 +43,24 @@ function App() {
         <Route path="/home/:id" element={<SinglePD />}></Route>
         {/* <Route path="/:id" element={<SinglePD />}></Route> */}
         {/* dashboard routes */}
-        <Route path="/dashboard" element={
-          <RequireAuth>
-            <Dashboard />
-          </RequireAuth>
-        }>
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
           <Route index element={<Profile />}></Route>
           <Route path="profile" element={<Profile />}></Route>
-          <Route path="all-user" element={<RequireAdmin>
-            <AllUser />
-          </RequireAdmin>}></Route>
+          <Route
+            path="all-user"
+            element={
+              <RequireAdmin>
+                <AllUser />
+              </RequireAdmin>
+            }
+          ></Route>
           <Route path="post-blog" element={<PostBlog />}></Route>
           <Route path="post-products" element={<PostProducts />}></Route>
           <Route path="my-cart" element={<MyCart />}></Route>
@@ -60,6 +69,8 @@ function App() {
           <Route path="my-wishlist" element={<MyWishList />}></Route>
         </Route>
 
+        {/* single product */}
+        <Route path="/product/:id" element={<OnePD/>}></Route>
         <Route path="/blog" element={<Blog />}></Route>
         <Route path="/blog/:id" element={<SingleBlog />}></Route>
         <Route path="/checkout" element={<Checkout />}></Route>
