@@ -23,11 +23,26 @@ import MyWishList from "./Pages/Dashboard/MyWishList/MyWishList";
 import Manage from "./Pages/Dashboard/Manage/Manage";
 import RequireAdmin from "./Pages/Shared/RequireAdmin/RequireAdmin";
 import OnePD from "./Pages/Shared/OnePD/OnePD";
+import { useEffect, useState } from "react";
 
 // demo11  https://www.ryanscomputers.com/
 // demo22  https://www.startech.com.bd/
 
 function App() {
+  // const [cart, setCart] = useState([]);
+  // const [products, setProducts] = useState([]);
+  // useEffect(()=>[
+  //   fetch(`http://localhost:5000/products`)
+  //   .then(res => res.json())
+  //   .then(data => {
+  //     setProducts(data);
+  //   })
+  // ], [])
+  // const handleAddToCart = (pd) => {  
+  //   const newCart = [...cart, pd];
+  //   setCart(newCart);
+  // };
+
   return (
     <>
       <ToastContainer />

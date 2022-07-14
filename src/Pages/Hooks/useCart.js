@@ -1,21 +1,8 @@
-import React, { useState } from "react";
-import Loading from "../Shared/Loading/Loading";
-import { useQuery } from "react-query";
+import React, { useState } from 'react'
+import useProduct from './useProduct';
 
 const useCart = () => {
   const [cart, setCart] = useState([]);
-
-  // data load all products
-  const {
-    data: products,
-    isLoading,
-    refetch,
-  } = useQuery("products", () =>
-    fetch("http://localhost:5000/products").then((res) => res.json())
-  );
-  if (isLoading) {
-    return <Loading></Loading>;
-  }
 
   const handleAddToCart = (pd) => {
     // console.log(pd);
@@ -23,7 +10,7 @@ const useCart = () => {
     const newCart = [...cart, pd];
     setCart(newCart);
   };
-  return [cart, setCart, products, refetch, handleAddToCart];
-};
+  return [cart, handleAddToCart];
+}
 
-export default useCart;
+export default useCart

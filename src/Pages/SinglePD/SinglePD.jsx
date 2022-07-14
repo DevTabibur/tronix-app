@@ -6,7 +6,7 @@ import "./SinglePD.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartArrowDown, faHeart, faEye } from "@fortawesome/free-solid-svg-icons";
 
-const SinglePD = ({pd, refetch, handleAddToCart}) => {
+const SinglePD = ({pd, handleAddToCart}) => {
   const {
     name,
     price,
@@ -22,8 +22,6 @@ const SinglePD = ({pd, refetch, handleAddToCart}) => {
     sideImage,
     sideImage2,
   } = pd;
-  const id = useParams();
-  const navigate = useNavigate();
 
 
   return (

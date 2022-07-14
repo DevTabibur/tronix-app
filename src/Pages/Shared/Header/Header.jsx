@@ -6,9 +6,11 @@ import "./Header.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../Firebase/firebase.init";
 import { signOut } from "firebase/auth";
+import useCart from "../../Hooks/useCart";
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
-  // console.log(user);
+
+
   const menu = [
 
     <>
@@ -127,7 +129,7 @@ const Header = () => {
                       />
                     </svg>
                     <span className="badge badge-sm indicator-item badge-secondary">
-                      10
+                      2
                     </span>
                   </div>
                 </label>
@@ -136,7 +138,7 @@ const Header = () => {
                   className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow"
                 >
                   <div className="card-body">
-                    <span className="font-bold text-lg">8 Items</span>
+                    <span className="font-bold text-lg">2</span>
                     <span className="text-info">Subtotal: $999</span>
                     <div className="card-actions">
                       <button className="btn btn-primary btn-block my-0 py-0">

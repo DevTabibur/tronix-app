@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import useCart from "../Hooks/useCart";
+import useProduct from "../Hooks/useProduct";
 import Loading from "../Shared/Loading/Loading";
 import SinglePD from "../SinglePD/SinglePD";
 import "./Shop.css";
@@ -24,25 +25,15 @@ const Shop = () => {
         setPages(pages);
       });
   }, []);
-  const [cart, setCart] = useState([]);
 
-  // data load all products
-  const {
-    data: products,
-    isLoading,
-    refetch,
-  } = useQuery("products", () =>
-    fetch("http://localhost:5000/products").then((res) => res.json())
-  );
-  if (isLoading) {
-    return <Loading></Loading>;
-  }
-  const handleAddToCart = (pd) => {
-    console.log(pd);
-    // do not do this: cart.push(product);
-    const newCart = [...cart, pd];
-    setCart(newCart);
-  };
+  const [cart, handleAddToCart] = useCart();
+  // console.log(cart, handleAddToCart, 'cart')
+  console.log(cart.length, 'cart')
+  const [products] = useProduct();
+// console.log(products, 'pd')
+
+  
+
   return (
     <>
       <div className="container mx-auto px-4">
@@ -64,7 +55,6 @@ const Shop = () => {
             <SinglePD
               key={pd._id}
               pd={pd}
-              refetch={refetch}
               handleAddToCart={handleAddToCart}
             />
           ))}
